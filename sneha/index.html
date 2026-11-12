@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ananya 🎀</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sparkles">✦　♡　✧　♡　✦</div>
+
+    <div class="balloon balloon1">🎈</div>
+    <div class="balloon balloon2">🎈</div>
+    <div class="balloon balloon3">🎈</div>
+    <div class="balloon balloon4">🎈</div>
+
+    <main class="card">
+
+        <div class="top-text">A LITTLE BIRTHDAY SURPRISE 🌷</div>
+
+        <div class="cake">🎂</div>
+
+        <h1>Happy Birthday,<br>
+            <span>Sneha!</span>
+        </h1>
+
+        <div class="divider">♡ ✨ ♡</div>
+
+        <h2>Another year, another reason to smile! 💗</h2>
+
+        <p class="message">
+            Hey Sneha! 🌸
+
+            Wishing you a day full of happiness,
+            laughter and all the little things
+            that make life beautiful.
+
+            May you achieve everything you've
+            been working towards, keep learning,
+            growing and making wonderful memories.
+        </p>
+
+        <div class="compliment">
+            <span>💌 A little compliment</span>
+
+            <p>
+                You've got a beautiful smile, a sharp mind
+                and such a lovely way of carrying yourself.
+                Honestly, that's a pretty rare combination.
+                Never underestimate how special those
+                little things make you! 😊
+            </p>
+        </div>
+
+        <p class="wish">
+            May your dreams get bigger, your worries
+            get smaller and your reasons to smile
+            keep increasing. ✨
+        </p>
+
+        <div class="gift">🎁</div>
+
+        <button id="surpriseBtn" onclick="openSurprise()">
+            A little surprise for you 💝
+        </button>
+
+        <div id="surprise">
+            <div class="surprise-icon">🌷</div>
+
+            <h2>One last thing...</h2>
+
+            <p>
+                Don't ever stop being curious,
+                keep that brilliant mind active
+                and please don't stop smiling.
+
+                The world needs more people
+                with your kind of charm! 💗
+
+                <br><br>
+
+                Have an absolutely wonderful year ahead!
+            </p>
+
+            <div class="stars">✨ 🌸 ✨</div>
+        </div>
+
+        <footer>
+            Made with a little extra effort by Aditya ❤️
+        </footer>
+
+    </main>
+
+    <div id="floating-hearts"></div>
+
+    <script>
+        function openSurprise() {
+            const surprise = document.getElementById("surprise");
+            const button = document.getElementById("surpriseBtn");
+
+            surprise.style.display = "block";
+            button.innerText = "Hope this made you smile! 🌸";
+            button.disabled = true;
+
+            for (let i = 0; i < 35; i++) {
+                createConfetti();
+            }
+
+            surprise.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+
+        function createConfetti() {
+            const heart = document.createElement("span");
+
+            const symbols = ["💗", "💕", "🌸", "✨", "💖", "🎀"];
+
+            heart.innerText =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.className = "confetti";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration =
+                (3 + Math.random() * 3) + "s";
+
+            document.getElementById("floating-hearts")
+                .appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        setInterval(() => {
+            if (Math.random() > 0.4) {
+                createConfetti();
+            }
+        }, 700);
+    </script>
+
+</body>
+</html>
